@@ -25,8 +25,8 @@ document.documentElement.classList.remove('dark')
   onClick={toggleDarkMode}
     >
       
-     {isDark ? <FontAwesomeIcon icon={faSun} size='lg' className='text-darkText1 w-5 h-5  '/> : 
-               <FontAwesomeIcon icon={faMoon} size='lg'className='text-darkText1 w-5 h-5'/> }
+     {isDark ? <FontAwesomeIcon icon={faSun} size='2xl' className='text-darkText1  '/> : 
+               <FontAwesomeIcon icon={faMoon} size='2xl'className='text-darkText1'/> }
      
     </motion.button>
   );

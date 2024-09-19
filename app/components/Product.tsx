@@ -1,4 +1,5 @@
-"use client";
+"use client";  // Ensure this is at the top of the file
+
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { useState } from "react";
@@ -9,11 +10,11 @@ type Data = {
   price: number;
   description: string;
   category: string;
-  images: string;
+  images: string[];
 };
 
 interface ProductProps {
-  product: Data; // Expect a single product object
+  product: Data;
 }
 
 function Product({ product }: ProductProps) {
@@ -44,7 +45,7 @@ function Product({ product }: ProductProps) {
             objectFit="cover"
             className="mx-auto"
           />
-          <div className="">
+          <div className="flex flex-col justify-around h-full">
             <h2 className="font-semibold text-lightText1 dark:text-darkText1">
               {product.title}
             </h2>
@@ -86,10 +87,9 @@ function Product({ product }: ProductProps) {
             onClick={handleFlip}
             className="absolute top-2 right-2 bg-gray-200 dark:bg-gray-700 p-2 rounded-md text-lightText1 dark:text-darkText1"
           >
-            Flip 
+            Flip
           </button>
         </motion.div>
-
       </motion.div>
     </div>
   );

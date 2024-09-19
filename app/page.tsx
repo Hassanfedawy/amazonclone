@@ -1,7 +1,6 @@
 import Header from "./components/Header";
 import Banner from "./components/Banner";
 import ProductsFeed from "./components/ProductsFeed";
-import { p } from "framer-motion/client";
 
 
 
