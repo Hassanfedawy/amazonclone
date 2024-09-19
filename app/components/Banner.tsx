@@ -5,7 +5,7 @@ import Image from 'next/image';
 
 function Banner() {
   return (
-    <div className='mt-5'>
+    <div>
       <Carousel 
         autoPlay
         infiniteLoop

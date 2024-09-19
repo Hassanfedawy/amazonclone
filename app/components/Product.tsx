@@ -3,15 +3,19 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { increment } from "../States/Reducers/cartCount";
+import { addToCart } from "../States/Reducers/cartItems";
 
-type Data = {
+interface Data {
   id: number;
   title: string;
   price: number;
   description: string;
   category: string;
   images: string[];
-};
+  quantity: number; // Added quantity property to track number of items
+}
 
 interface ProductProps {
   product: Data;
@@ -24,10 +28,13 @@ function Product({ product }: ProductProps) {
     setIsFlipped((prev) => !prev); // Toggle the flip state
   };
 
+  const dispatch=useDispatch();
+  
+
   return (
     <div className="w-auto h-auto perspective mx-auto">
       <motion.div
-        className="relative bg-lightCardBg dark:bg-darkCardBg rounded-md"
+        className="relative bg-lightCardBg dark:bg-darkCardBg rounded-md shadow-lg"
         animate={{ rotateY: isFlipped ? 180 : 0 }}
         transition={{ duration: 0.6 }}
         style={{ transformStyle: "preserve-3d" }}
@@ -42,7 +49,6 @@ function Product({ product }: ProductProps) {
             alt={product.title}
             width={200}
             height={200}
-            objectFit="cover"
             className="mx-auto"
           />
           <div className="flex flex-col justify-around h-full">
@@ -62,6 +68,10 @@ function Product({ product }: ProductProps) {
             className="w-full text-lightButtonsText dark:text-darkButtonsText
                          bg-lightButtonsBg hover:bg-lightHoverButtonsBg
                          rounded-lg p-2 font-semibold"
+                         onClick={() => {
+                          dispatch(increment());
+                          dispatch(addToCart(product));
+                        }}
           >
             Add to Cart
           </button>

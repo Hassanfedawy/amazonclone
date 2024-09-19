@@ -1,4 +1,3 @@
-import Header from "./components/Header";
 import Banner from "./components/Banner";
 import ProductsFeed from "./components/ProductsFeed";
 
@@ -16,7 +15,7 @@ export default async function Home() {
 
   return (
     <div className="min-h-screen bg-lightBg dark:bg-darkBg">
-    <Header />
+   
    <Banner />
   <ProductsFeed data={data}/>
 
