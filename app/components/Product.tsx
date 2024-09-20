@@ -14,7 +14,7 @@ interface Data {
   description: string;
   category: string;
   images: string[];
-  quantity: number; // Added quantity property to track number of items
+  quantity?: number; // Added quantity property to track number of items
 }
 
 interface ProductProps {
@@ -28,8 +28,17 @@ function Product({ product }: ProductProps) {
     setIsFlipped((prev) => !prev); // Toggle the flip state
   };
 
-  const dispatch=useDispatch();
-  
+  const dispatch = useDispatch();
+
+  const handleAddToCart = () => {
+    const productWithQuantity = {
+      ...product,
+      quantity: product.quantity ?? 0, // Ensure the product has a quantity
+    };
+
+    dispatch(increment());
+    dispatch(addToCart(productWithQuantity));
+  };
 
   return (
     <div className="w-auto h-auto perspective mx-auto">
@@ -68,10 +77,7 @@ function Product({ product }: ProductProps) {
             className="w-full text-lightButtonsText dark:text-darkButtonsText
                          bg-lightButtonsBg hover:bg-lightHoverButtonsBg
                          rounded-lg p-2 font-semibold"
-                         onClick={() => {
-                          dispatch(increment());
-                          dispatch(addToCart(product));
-                        }}
+            onClick={handleAddToCart}
           >
             Add to Cart
           </button>
