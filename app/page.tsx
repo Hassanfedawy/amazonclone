@@ -14,11 +14,12 @@ export default async function Home() {
   const data = await res.json(); // Await the parsing of the JSON response
 
   return (
-    <div className="min-h-screen bg-lightBg dark:bg-darkBg">
+    <div className="min-h-screen bg-gray-100">
    
+   <main className="max-w-screen-2xl mx-auto">
    <Banner />
   <ProductsFeed data={data}/>
-
+  </main>
  
  
     </div>
