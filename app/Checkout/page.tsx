@@ -15,9 +15,6 @@ const Checkout = () => {
 
     const totalPrice = products.reduce((sum, product) => sum + product.price * product.quantity, 0);
 
-    const shippingFee = Math.max(totalPrice * 0.1 - 5, 0); 
-
-    const totalCost = totalPrice + shippingFee;
 
 return (
 <div className='bg-gray-100 lg:flex'>
@@ -38,7 +35,7 @@ return (
  <div className='flex flex-col  bg-white p-10 shadom-md'>
     {products.length&&(
     <>
-    <h2 className='whitespace-nowrap'>Subtotal({totalItems}):<span className='font-bold'>${totalCost.toFixed(2)}</span> </h2>
+    <h2 className='whitespace-nowrap'>Subtotal({totalItems}):<span className='font-bold'>${totalPrice.toFixed(2)}</span> </h2>
 
     <button className='button mt-2'>Proceed to Checkout</button>
     </>
