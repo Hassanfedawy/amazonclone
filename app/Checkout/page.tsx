@@ -10,7 +10,6 @@ import CheckOutProduct from '../components/CheckOutProduct';
 const Checkout = () => {
     const products = useSelector((state: RootState) => state.cartItems.products);
     const totalItems=useSelector((state: RootState) => state.cart.count);
-    const dispatch = useDispatch();
 
 
     const totalPrice = products.reduce((sum, product) => sum + product.price * product.quantity, 0);
@@ -21,7 +20,7 @@ return (
 
     <main>
         <div className='flex-grow m-5 shadow-sm'>
-            <Image src="https://links.papareact.com/ikj" alt='Ad' width={1070} height={250} objectFit='contain'/>
+            <Image src="https://links.papareact.com/ikj" loading='lazy' alt='Ad' width={1070} height={250} objectFit='contain'/>
             <div className='flex flex-col p-5 space-y-10 bg-white'>
                 <h1 className='text-3xl border-b pb-4'>{products.length===0? 'Your Amazon Basket is Empty':"Shopping Basket"}</h1>
                 {products.map((product,i)=>(

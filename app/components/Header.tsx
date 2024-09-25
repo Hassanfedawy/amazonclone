@@ -19,6 +19,7 @@ function Header() {
       <Link href={"/"} className='cursor-pointer flex-grow sm:flex-grow-0'>
       <Image
         src="https://links.papareact.com/f90"
+        loading='lazy'
         alt="Logo"
         width={150}
         height={40}

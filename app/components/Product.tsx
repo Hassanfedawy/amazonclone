@@ -38,7 +38,7 @@ function Product({ product }: ProductProps) {
   <section className="bg-white z-30 flex flex-col relative m-5 p-10 mx-auto rounded-md">
 
     <p className="absolute top-2 right-2 text-xs italic text-gray-400 ">{product.category}</p>
-    <Image src={product.images[0]} alt={product.title} width={200} height={150}className="mx-auto"/>
+    <Image loading='lazy' src={product.images[0]} alt={product.title} width={200} height={150}className="mx-auto"/>
     <h4 className="my-3">{product.title}</h4>
     <p className="text-xs my-2 line-clamp-2">{product.description}</p>
     <div>

@@ -9,7 +9,7 @@ function CheckOutProduct({product}:any) {
 
   return (
     <div className="grid grid-cols-5">
-      <Image src={product.images[0]} alt={product.title} width={200} height={200} objectFit="contain"/>
+      <Image loading='lazy' src={product.images[0]} alt={product.title} width={200} height={200} objectFit="contain"/>
 
       <div className="col-span-3 mx-5">
         <p>{product.title}</p>

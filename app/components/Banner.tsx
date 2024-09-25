@@ -18,6 +18,7 @@ function Banner() {
         <div className="relative w-full h-[500px]">
           <Image
             src="https://links.papareact.com/7ma"
+            loading='lazy'
             alt="Ad"
             fill
             className="object-cover"
@@ -26,6 +27,7 @@ function Banner() {
         <div className="relative w-full h-[500px]">
           <Image
             src="https://links.papareact.com/6ff"
+            loading='lazy'
             alt="Ad 2"
             fill
             className="object-cover"
