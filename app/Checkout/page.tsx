@@ -38,7 +38,7 @@ return (
  <div className='flex flex-col  bg-white p-10 shadom-md'>
     {products.length&&(
     <>
-    <h2 className='whitespace-nowrap'>Subtotal({totalItems}):<span className='font-bold'>${totalCost}</span> </h2>
+    <h2 className='whitespace-nowrap'>Subtotal({totalItems}):<span className='font-bold'>${totalCost.toFixed(2)}</span> </h2>
 
     <button className='button mt-2'>Proceed to Checkout</button>
     </>
